@@ -5,7 +5,7 @@ steps:
    args:
      - -c
      - |
-       gcloud functions deploy hello-world \
+       gcloud functions deploy ai-workshop-function-001 \
          --runtime=python310 \
          --trigger-http \
          --allow-unauthenticated \
