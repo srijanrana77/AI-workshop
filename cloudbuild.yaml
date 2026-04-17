@@ -1,0 +1,19 @@
+steps:
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   id: 'Deploy Function'
+   entrypoint: bash
+   args:
+     - -c
+     - |
+       gcloud functions deploy hello-world \
+         --runtime=python310 \
+         --trigger-http \
+         --allow-unauthenticated \
+         --entry-point=hello_world \
+         --region=us-central1 \
+         --source=. \
+         --memory=256MB \
+         --timeout=60s
+options:
+ logging: CLOUD_LOGGING_ONLY
+timeout: 900s
